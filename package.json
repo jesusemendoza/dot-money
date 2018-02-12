@@ -1,7 +1,7 @@
 {
   "name": "dot-money",
   "version": "0.0.0",
-  "description": "tracker for capitol gains/lossed with virtual currency",
+  "description": "tracker for capital gains/loss with virtual currency",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -61,5 +61,9 @@
     "faker": "^4.1.0",
     "jest": "^22.2.2",
     "superagent": "^3.8.2"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": []
 }
