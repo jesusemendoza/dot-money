@@ -1,4 +1,7 @@
 # dot-money
+
+https://travis-ci.org/Dot-money/dot-money.svg?branch=master
+
 This project allows users to track their virtual currency gains/losses for reporting purposes.  
 ```$
 =============
@@ -56,9 +59,9 @@ also for every time user uses refresh or application updates (we save resources 
 
 - Api returns a JSON file with list of transactions to server
 
-- You then request the historic price data for the date of each transaction 
+- You then request the historic price data for the date of each transaction
 
-- We then POST it to the user’s account 
+- We then POST it to the user’s account
 
 //We will have two different schemas user accounts and historical price data.
 //Stretch goal: we can make an API with solidity  or web3js
@@ -88,7 +91,7 @@ Check for null values
 Check for valid transaction within id
 Correct balance using web3js: example (youtube Jesus)
 
-Edge Cases: 
+Edge Cases:
 
 
 WEB3JS.1.0 youtube video minute 5 and minute 13
