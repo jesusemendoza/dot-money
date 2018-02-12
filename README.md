@@ -50,3 +50,6 @@ This is the flow:
 - Error Handler
 - Test Server
 - User validation
+
+
+//work in progress, will add some graphics
