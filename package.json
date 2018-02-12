@@ -1,7 +1,7 @@
 {
   "name": "dot-money",
   "version": "0.0.0",
-  "description": "language: node_js",
+  "description": "tracker for capitol gains/lossed with virtual currency",
   "main": "index.js",
   "scripts": {
      "start": "node index.js",
