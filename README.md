@@ -1,4 +1,4 @@
-# virtual-currency-gains-tracker
+# dot-money
 This project allows users to track their virtual currency gains/losses for reporting purposes.  
 ```$
 =============
