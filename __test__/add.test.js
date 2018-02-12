@@ -1,6 +1,6 @@
 'use strict';
 
-const add = require('./add');
+const add = require('../lib/add');
 require('jest');
 
 describe('add', () => {
