@@ -1,0 +1,36 @@
+{
+  "name": "dot-money",
+  "version": "0.0.0",
+  "description": "language: node_js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dot-money/dot-money.git"
+  },
+  "author": "dot-money organization",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dot-money/dot-money/issues"
+  },
+  "homepage": "https://github.com/Dot-money/dot-money#readme",
+  "dependencies": {
+    "aws-sdk": "^2.192.0",
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "del": "^3.0.0",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.1",
+    "mongoose": "^5.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "faker": "^4.1.0",
+    "jest": "^22.2.2",
+    "superagent": "^3.8.2"
+  }
+}
