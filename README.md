@@ -1,6 +1,12 @@
  # .$
 
+
 ###  dot-money is an app to keep track of your capital gains when trading cryptocurrencies.
+
+[![Build Status](https://travis-ci.org/Dot-money/dot-money.svg?branch=master)](https://travis-ci.org/Dot-money/dot-money)
+
+This project allows users to track their virtual currency gains/losses for reporting purposes.  
+```$
 
 How to use:
 - ```POST```
