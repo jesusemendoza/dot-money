@@ -57,4 +57,26 @@ This is the flow:
 
 //work in progress, will add some graphics
 
+<<<<<<< HEAD
 //dont forget: npm install get-csv
+=======
+Schemas
+
+Auth
+--compareHash(string, unique true)
+--username(string)
+--email(string)
+--password(string)
+--wallets(connects to wallet schema)
+--timestamp(true)
+
+Wallet
+--walletId(string,unique true)
+--capital gains(string)
+--transactions(json)
+
+Historical Data
+--timestamp(usd)
+--usd(number)
+--Ethereum(float)
+>>>>>>> d2a9eff1c67d83afa3ce14a89061213ef1b73cc9
