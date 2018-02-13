@@ -59,3 +59,23 @@ This is the flow:
 
 
 //work in progress, will add some graphics
+
+Schemas
+
+Auth
+--compareHash(string, unique true)
+--username(string)
+--email(string)
+--password(string)
+--wallets(connects to wallet schema)
+--timestamp(true)
+
+Wallet
+--walletId(string,unique true)
+--capital gains(string)
+--transactions(json)
+
+Historical Data
+--timestamp(usd)
+--usd(number)
+--Ethereum(float)
