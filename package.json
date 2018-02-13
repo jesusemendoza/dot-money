@@ -39,7 +39,7 @@
     "type": "git",
     "url": "git+https://github.com/Dot-money/dot-money.git"
   },
-  "author": "dot-money organization",
+  "author": "Jesus Mendoza, Richard Montgomery, Hector Norzagaray, Karen Perez",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Dot-money/dot-money/issues"

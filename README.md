@@ -57,7 +57,6 @@ This is the flow:
 
 //work in progress, will add some graphics
 
-<<<<<<< HEAD
 //dont forget: npm install get-csv
 =======
 Schemas
@@ -79,4 +78,7 @@ Historical Data
 --timestamp(usd)
 --usd(number)
 --Ethereum(float)
->>>>>>> d2a9eff1c67d83afa3ce14a89061213ef1b73cc9
+
+
+tuesday/2/13/18
+//we added get-csv package
