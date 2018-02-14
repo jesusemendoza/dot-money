@@ -9,7 +9,7 @@ const compute = require('../lib/compute');
 
 module.exports= function(router) {
   router.get('/price', bodyParser, (req, res) => {
-    console.log("first", req.body.date);
+    // console.log("first", req.body);
     if(req.body.date){
 
       return Price.findOne({'Date(UTC)' : req.body.date})
@@ -18,6 +18,7 @@ module.exports= function(router) {
 
     }
     return Price.find()
+      // .then(data => console.log(data))
       .then(data => res.status(200).json(data))
       .catch(err => errorHandler(err, res));
   });

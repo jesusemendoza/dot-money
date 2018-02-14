@@ -2,9 +2,9 @@
 
 const Auth = require('../../model/auth');// vinicio - similar to a user
 const faker = require('faker');
-// const Gallery = require('../../model/gallery');
+const Price = require('../../model/price');
 
-// vinicio - {auth:{},gallery:{},mario:{}}
+// collection of mock schemas
 const mocks = module.exports = {};
 mocks.auth = {};
 
@@ -25,23 +25,16 @@ mocks.auth.createOne = () => {
     });
 };
 
-// mocks.gallery = {};
-// mocks.gallery.createOne = () => {
-//   let resultMock = null;
-//
-//   return mocks.auth.createOne()
-//     .then(createdUserMock => resultMock = createdUserMock)
-//     .then(createdUserMock => {
-//       return new Gallery({
-//         name: faker.internet.domainWord(),
-//         description: faker.random.words(15),
-//         userId: createdUserMock.user._id,
-//       }).save(); // vinicio - something is being saved into Mongo
-//     })
-//     .then(gallery => {
-//       resultMock.gallery = gallery;
-//       // console.log(resultMock);
-//       return resultMock;
-//     });
-// };
+mocks.price = {};
+
+mocks.price.createOne = () => {
+
+  return new Price({
+    'Date(UTC)': '8-15-2015',
+    'Value': '1.36',
+    'UnixTimeStamp': '1439596800',
+  }).save();
+};
+
 mocks.auth.removeAll = () => Promise.all([Auth.remove()]);
+mocks.price.removeAll = () => Promise.all([Price.remove()]);
