@@ -2,7 +2,6 @@
 
 const mongoose = require('mongoose');
 const Auth = require('./auth');
-const Transaction = require('./transaction');
 
 const Ethwallet = mongoose.Schema({
   capitalGain: {type: String, required: true},
