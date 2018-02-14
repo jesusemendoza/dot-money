@@ -21,4 +21,9 @@ module.exports= function(router) {
       .then(data => res.status(200).json(data))
       .catch(err => errorHandler(err, res));
   });
+  router.post('/price', bodyParser, (req, res) => {
+    return compute.csvGet()
+      .then(data => res.status(200).json(data))
+      .catch(err => errorHandler(err, res));
+  });
 };
