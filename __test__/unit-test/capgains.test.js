@@ -138,7 +138,7 @@ let transaction = [{
 
     // });
     it('should return profit', () => {
-      expect(capgains.profit(transaction0)).toEqual(248);
+      expect(capgains.profit(transaction0)).toEqual(243);
       // expect(capgains.profit(transaction1)).toEqual(9);
 
     });
