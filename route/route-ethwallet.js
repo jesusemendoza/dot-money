@@ -17,6 +17,7 @@ module.exports = router => {
       console.log(req.body);
       transactions.ethTrans(req.body.wallet)
         .then( data => transactions.appendXfer(data.body, req.body.wallet))  
+        .then( data => transactions.appendUsd(data, req.body.wallet))
         .then(data => res.send(data));
       
     //   req.body.walletId = req.user._id;
