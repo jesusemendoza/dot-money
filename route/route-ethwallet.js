@@ -16,12 +16,15 @@ const capgains = require('../lib/capgains');
 module.exports = router => {
   router.route('/wallet/:_id?')
     .post(bearAuth, bodyParser, (req, res)=>{
+      let address = req.body.wallet.toLowerCase();
       console.log(req.body);
       transactions.ethTrans(req.body.wallet)
-        .then( data => transactions.appendXfer(data.body, req.body.wallet.toLowerCase()))  
+        .then( data => transactions.appendXfer(data.body, address))  
         .then( data => transactions.appendUsd(data))
-        .then(data => capgains.profit(data))
-        .then(gains => res.status(200).json(`${gains}`));
+        .then(data => this.data= data)
+        .then(data => capgains.profit(data, address))
+        .then(gains => capgains.packager(gains,this.data, address))
+        .then(gains => res.send(gains));
       
     //   req.body.walletId = req.user._id;
     //   return new ethWallet
