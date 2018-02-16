@@ -8,3 +8,8 @@ describe('Time Stamp', () => {
     expect(compute.timeStamp(1513362321)).toBe(1513296000);
   });
 });
+describe('CSV GET', () => {
+  it('load up the database', () => {
+    expect(compute.csvGet()).toBeInstanceOf(Promise);
+  });
+});
