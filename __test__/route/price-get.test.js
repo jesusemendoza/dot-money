@@ -15,8 +15,16 @@ describe.only('GET /api/v1/price', function () {
   // });
   beforeAll(server.start);
   afterAll(server.stop);
+  afterAll(()=> {
+    Price.remove({}, function() {
+      console.log('collection removed');
+    });  
+  });
 
   describe('Valid Requests', () => {
+    Price.remove({}, function() {
+      console.log('collection removed');
+    });
     beforeAll(() => {
       return new Price({
         'Date(UTC)': '8-15-2015',
