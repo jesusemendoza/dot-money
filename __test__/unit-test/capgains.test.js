@@ -115,14 +115,14 @@ describe.only('#Profit', function () {
   describe('ValtxId Requests', () => {
     
     it('should return profit', () => {
-      expect(capgains.profit(transaction)).toEqual(40);
+      expect(capgains.profit(transaction)).toEqual('40.00');
     });
     it('should return profit', () => {
-      expect(capgains.profit(transaction1)).toEqual(9);
+      expect(capgains.profit(transaction1)).toEqual('9.00');
 
     });
     it('should return profit', () => {
-      expect(capgains.profit(transaction0)).toEqual(243);
+      expect(capgains.profit(transaction0)).toEqual('243.00');
 
     });
   });
