@@ -5,12 +5,9 @@
  dot-money is an app to keep track of your capital gains when trading cryptocurrencies.
 ### Table of contents 
 
-
 - [Table of contents](#table-of-contents)
 - [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
 - [How to install and use](#how-to-install-and-use)
-- [Tests](#Tests-)
 - [Deployment](#deployment)
 - [Built](#built-with)
 - [Dev packages used](#dev-packages-used-)
@@ -21,121 +18,84 @@
 
 
 ### Prerequisites
-- somethin to fill this
-- thing and then we will 
-- change it
-
-### Getting Started:
-- wow
-- this is not ready
-- wow
-- this is not ready
-- wow
-- this is not ready
-
+- Node.js
+- mongoDB
+- HTTpie
 
 ### How to install and use
  - Fork [our repo](https://github.com/Dot-money/dot-money)
  - Clone into local machine: ```github clone https://github.com/{your-github-username}/dot-money.git```
- - run ```npm i``` to install all the dev packages needed
-- open 3 terminal tabs and run mongodb, nodemon server and use the third terminal window to run the following commands:
+ - Run ```npm i``` to install all the dev packages needed
+ - Set up .env file on the route and .test.env on the test directory with PORT Database and API key
+ - Open 3 terminal tabs and run mongodb, nodemon server and use the third terminal window to run the following commands:
  
- ```POST```
-request add tracker of a wallet id to user’s account.
-```(http POST localhost:8080/api/v1/c2/ walletid=‘0xF8EE57337d4fDB76260C29a8873e87bb30F53a8a’  tokenid=‘sample-token’)```
-   - Should return status code ```201 user was created```
+    
+ #### App Flow entries through command line/terminal:
+ ![alt text](https://i.imgur.com/NhYOUEA.jpg)
 
-```GET```
-request pulls the most up to date information of the user’s account
-            - ```
-            (http GET localhost:8080/api/v1/c2/ tokenid=“sample-token”)```
-   - GET Should return a JSON file containing the following:
-```{"blockNumber":"4763872",
-"timeStamp":"1513748174",
-"transactionIndex":"31",
-"from":"0x2a65aca4d5fc5b5c859090a6c34d164135398226",
-"to":"0xc1a30fd9f85d48c38a8f8733d450d059b7bba1b5",
-"value":"76551230000000000",
-"confirmations":"311274",
-"dollarValue":""
-},
-```
-```PUT```
-we can use it to refresh after a transaction was performed (updates database)
-            ```http PUT localhost://8080/api/v1/c2/ tokenid=‘sample-token’```
-             also for every time user uses refresh or application updates (we save resources by only updating when user requests)
+User Route Sign Up
+```http POST :3000/api/v1/signup username=karen email=‘karen@karen.com’ password=test```
+- On sucess, you get back a token.
 
-```DELETE```
-will be used when a user stops tracking a wallet
-                  ```http DELETE localhost://8080/api/v1/c2/ tokenid=‘sample-token’ walletid=‘0xF8EE57337d4fDB76260C29a8873e87bb30F53a8a’```
+User Route Sign In
+``````http -a miner:secret :3000/api/v1/signin``````
+- On success you get a token
 
 
-### Tests
-Explain how to run the automated tests for this system
+#### Price Route:
+![alt text](https://i.imgur.com/jXkNLxF.jpg)
 
-- Break down into end to end tests
-Explain what these tests test and why
-- wow
-- this is not ready
-- wow
-- this is not ready
+In order to populate our database with historic data, run the following command:
+```http POST localhost:3000/api/v1/price```
+   
+- On success, it will return a series of objects that contain a date and the values of the cryptocurrency at midnight that day
 
+#### EthWallet Route:
+![alt text](https://i.imgur.com/Hiqa9ay.jpg)
+In order to populate our database with historic data, run the following command:
+```http POST localhost:3000/api/v1/wallet```
 
-``` Give an example```
+- On success, it should return the following:
 
-- Explain what these tests test and why
-
-- Give an example
-- wow
-- this is not ready
-- wow
-- this is not ready
-
-
-This is the flow:
-![alt text](https://i.imgur.com/v2NSunY.png)
-- Server pings Ethereum API blockchain for the list of transactions for existing account
-
-- API returns a JSON file with list of transactions to server
-
-- You then request the historic price data for the date of each transaction
-
-- We then POST it to the user’s account
+```http post localhost:3000/api/v1/wallet 'Authorization:Bearer <token>' wallet='user id from a third party API'```
+- This command will capture all the transactions associated with the wallet id and calculate the capital gains
 
 ### Deployment
 - Heroku
 - Travis CI
 
-
 ### Built with 
 - JavaScript
+- npm
 
-Dev packages used:
-- AWS-sdk
+### Packages used:
 - bcrypt
 - body-parser
-- del
 - dotenv
 - express
 - get-csv
 - jsonwebtoken
 - mongoose
-- mongoDB
+- eslint
+- faker
+- jest
+- superagent
 
 ### Version control
-- GitHub
+- GitHub 
+- Travis Continuous Integration (CI)
 
 ### Authors
-- [Karen Perez](https://github.com/kbperez)
-- [Jesus Mendoza](https://github.com/jesusemendoza)
-- [Richard Montgomery](https://github.com/montgomeryrd)
-- [Hector Norzagaray](https://github.com/nzytag)
+- [Karen Perez](https://www.linkedin.com/in/karenbperez/)
+- [Jesus Mendoza](https://www.linkedin.com/in/jesusemendoza/)
+- [Richard Montgomery](https://www.linkedin.com/in/montgomeryrd/)
+- [Hector Norzagaray](https://www.linkedin.com/in/hnorzagaray/)
 
 ### License
 - This project is licensed under [MIT license.](https://raw.githubusercontent.com/Dot-money/dot-money/master/LICENSE)
 
 ### Acknowldgements
 
-- Code Fellows Faculty
-- Tip of the hat to [Kevin Miller](https://github.com/driftAbout)
-- etc
+- [Code Fellows Faculty](https://www.codefellows.org/)
+- Tip of the hat to [Kevin Miller](https://www.linkedin.com/in/kevin-miller-driftabout/)
+- [Etherscan.io](https://etherscan.io/apis)
