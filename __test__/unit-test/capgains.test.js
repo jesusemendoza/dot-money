@@ -5,47 +5,41 @@ require('jest');
 
 describe.only('#Profit', function () {
   
-let transaction = [{
+  let transaction = [{
 
-    'id' : 0,
-    'eth': 0.5,
-    'val': 50,
-    'usd': 25,
-    'direction': 'in',
-  },
-  {
-    'id' : 1,
-    'eth': 1.2,
-    'val': 100,
-    'usd': 120,
-    'direction': 'in',
-  },
-  {
-    'id' : 2,
-    'eth': 1.3,
-    'val': 150,
-    'usd': 195,
-    'direction': 'out',
-  },
-  {
-    'id' : 3,
-    'eth': 0.4,
-    'val': 125,
+    'txId' : 0,
+    'amount': 0.5,
     'usd': 50,
     'direction': 'in',
   },
   {
-    'id' : 4,
-    'eth': 0.3,
-    'val': 100,
-    'usd': 30,
+    'txId' : 1,
+    'amount': 1.2,
+    'usd': 100,
     'direction': 'in',
   },
   {
-    'id' : 5,
-    'eth': 0.8,
-    'val': 50,
-    'usd': 40,
+    'txId' : 2,
+    'amount': 1.3,
+    'usd': 150,
+    'direction': 'out',
+  },
+  {
+    'txId' : 3,
+    'amount': 0.4,
+    'usd': 125,
+    'direction': 'in',
+  },
+  {
+    'txId' : 4,
+    'amount': 0.3,
+    'usd': 100,
+    'direction': 'in',
+  },
+  {
+    'txId' : 5,
+    'amount': 0.8,
+    'usd': 50,
     'direction': 'out',
   },
       
@@ -53,93 +47,82 @@ let transaction = [{
 
   let transaction0 = [{
 
-    'id' : 0,
-    'eth': 5.2,
-    'val': 100,
-    'usd': 25,
+    'txId' : 0,
+    'amount': 5.2,
+    'usd': 100,
     'direction': 'in',
   },
   {
-    'id' : 1,
-    'eth': 0.8,
-    'val': 50,
-    'usd': 120,
+    'txId' : 1,
+    'amount': 0.8,
+    'usd': 50,
     'direction': 'in',
   },
   {
-    'id' : 2,
-    'eth': 3.5,
-    'val': 200,
-    'usd': 195,
+    'txId' : 2,
+    'amount': 3.5,
+    'usd': 200,
     'direction': 'out',
   },
   {
-    'id' : 3,
-    'eth': 2.2,
-    'val': 40,
-    'usd': 50,
+    'txId' : 3,
+    'amount': 2.2,
+    'usd': 40,
     'direction': 'out',
   },     
   ]; 
 
   let transaction1 = [{
 
-    'id' : 0,
-    'eth': 1,
-    'val': 1,
-    'usd': 25,
+    'txId' : 0,
+    'amount': 1,
+    'usd': 1,
     'direction': 'in',
   },
   {
-    'id' : 1,
-    'eth': 2,
-    'val': 3,
-    'usd': 120,
+    'txId' : 1,
+    'amount': 2,
+    'usd': 3,
     'direction': 'in',
   },
   {
-    'id' : 2,
-    'eth': 2,
-    'val': 2,
-    'usd': 195,
+    'txId' : 2,
+    'amount': 2,
+    'usd': 2,
     'direction': 'out',
   },
   {
-    'id' : 3,
-    'eth': 3,
-    'val': 2,
-    'usd': 50,
+    'txId' : 3,
+    'amount': 3,
+    'usd': 2,
     'direction': 'in',
   },
   {
-    'id' : 4,
-    'eth': 2,
-    'val': 2,
-    'usd': 30,
+    'txId' : 4,
+    'amount': 2,
+    'usd': 2,
     'direction': 'in',
   },
   {
-    'id' : 5,
-    'eth': 5,
-    'val': 4,
-    'usd': 40,
+    'txId' : 5,
+    'amount': 5,
+    'usd': 4,
     'direction': 'out',
   },
       
   ]; 
 
-  describe('Valid Requests', () => {
+  describe('ValtxId Requests', () => {
     
-    // it('should return profit', () => {
-    //   expect(capgains.profit(transaction)).toEqual(40);
-    // });
-    // it('should return profit', () => {
-    //   // expect(capgains.profit(transaction1)).toEqual(9);
+    it('should return profit', () => {
+      expect(capgains.profit(transaction)).toEqual(40);
+    });
+    it('should return profit', () => {
+      expect(capgains.profit(transaction1)).toEqual(9);
 
-    // });
+    });
     it('should return profit', () => {
       expect(capgains.profit(transaction0)).toEqual(243);
-      // expect(capgains.profit(transaction1)).toEqual(9);
 
     });
   });
