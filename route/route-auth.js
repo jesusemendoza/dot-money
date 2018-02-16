@@ -1,6 +1,6 @@
 'use strict';
 
-//dependancies
+//dependencies
 const Auth = require('../model/auth');
 const bodyParser = require('body-parser').json();
 const errorHandler = require('../lib/error-handler');
