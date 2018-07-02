@@ -8,10 +8,11 @@ const capgains = require('../lib/capgains');
 
 //set up post and get routes for authentication
 module.exports = router => {
-  router.route('/wallet/:_id?')
-    .post(bearAuth, bodyParser, (req, res)=>{
-      let address = req.body.wallet.toLowerCase();
-      transactions.ethTrans(req.body.wallet)
+  router.route('/wallet')
+    .post(bodyParser, (req, res)=>{
+      let address = req.body.wallet;
+      console.log(address);
+      transactions.ethTrans(address)
         .then( data => transactions.appendXfer(data.body, address))  
         .then( data => transactions.appendUsd(data))
         .then(data => this.data= data)
