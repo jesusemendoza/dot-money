@@ -18,6 +18,6 @@ module.exports = router => {
         .then(data => this.data= data)
         .then(data => capgains.profit(data, address))
         .then(gains => capgains.packager(gains,this.data, address))
-        .then(gains => res.send(gains));
+        .then(final => res.send(final));
     });
 };
